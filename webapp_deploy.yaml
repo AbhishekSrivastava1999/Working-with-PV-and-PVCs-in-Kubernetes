@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webdeploy
+  namespace: lab3
+  labels:
+    app: employees
+spec:
+  selector:
+    matchLabels:
+      app: employees
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: employees
+    spec:
+      containers:
+      - name: web
+        image: '105718917616.dkr.ecr.us-east-1.amazonaws.com/ass02-dev-web:v2.0'
+        ports: 
+        - containerPort: 8080
+          protocol: TCP
+        env:
+        - name: DBPWD
+          value : passw
+        - name: DBHOST
+          value : 10.244.0.36
+        - name: DBUSER
+          value : root
+        - name: DBPORT
+          value : "3306"
