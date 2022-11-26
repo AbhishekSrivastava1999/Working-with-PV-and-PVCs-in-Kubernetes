@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-	name:
-	namespace:
-	annotations
-	  volume.beta.kubernetes.io/storage-class: gp2
+  name:
+  namespace:
+  labels:
+    app: mysql
 spec:
   resources:
     requests:
 	storage: 1Gi
   accessModes:
-  - ReadWriteOnce
+    - ReadWriteOnce
   storageClassName: 
