@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name:
-  namespace:
+  namespace: lab3
   labels:
     app: mysql
 spec:
