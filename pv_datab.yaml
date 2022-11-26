@@ -12,5 +12,5 @@ spec:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Delete
   hostPath:
-    path: /tmp/data
-  storageClassName:
+    path: /tmp/info
+  storageClassName: localstorage
