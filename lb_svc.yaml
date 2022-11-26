@@ -7,7 +7,7 @@ apiVersion: v1
 	app: lbsvc	
   spec:
     selector:
-      app: 
+      app: employees
     ports:
       - protocol: TCP
         port: 8080
