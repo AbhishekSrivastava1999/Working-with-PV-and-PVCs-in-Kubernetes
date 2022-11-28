@@ -20,7 +20,7 @@ spec:
         image: 105718917616.dkr.ecr.us-east-1.amazonaws.com/ass02-dev-datab:v1.0
         volumeMounts:
         - mountPath: /datab
-          name: mysql-pvc
+          name: dpvc-host
         env:
         - name: MYSQL_ROOT_PASSWORD
           value : passw
@@ -30,6 +30,6 @@ spec:
         - containerPort: 8080
           protocol: TCP
       volumes:
-      - name: mysql-pvc 
+      - name: dpvc-host
         persistentVolumeClaim:
           claimName: dpvc-host
