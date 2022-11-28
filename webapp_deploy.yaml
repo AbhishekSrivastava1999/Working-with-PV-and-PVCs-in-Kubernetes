@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: web
-        image: '105718917616.dkr.ecr.us-east-1.amazonaws.com/ass02-dev-web:v2.0'
+        image: 105718917616.dkr.ecr.us-east-1.amazonaws.com/web:v1.0
         ports: 
         - containerPort: 8080
           protocol: TCP
