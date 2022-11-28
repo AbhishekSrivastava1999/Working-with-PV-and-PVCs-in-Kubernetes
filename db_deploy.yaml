@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: datab
-        image: 105718917616.dkr.ecr.us-east-1.amazonaws.com/ass02-dev-datab:v1.0
+        image: 105718917616.dkr.ecr.us-east-1.amazonaws.com/datab:v1.0
         volumeMounts:
         - mountPath: /datab
           name: dpvc-host
