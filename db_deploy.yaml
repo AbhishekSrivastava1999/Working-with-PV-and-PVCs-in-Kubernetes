@@ -17,19 +17,19 @@ spec:
     spec:
       containers:
       - name: datab
-        image: '105718917616.dkr.ecr.us-east-1.amazonaws.com/ass02-dev-datab:v1.0'
+        image: 105718917616.dkr.ecr.us-east-1.amazonaws.com/ass02-dev-datab:v1.0
+        volumeMounts:
+        - mountPath: /datab
+          name: mysql-pvc
         env:
         - name: MYSQL_ROOT_PASSWORD
           value : passw
         - name: DBPORT
           value : "3306"
         ports: 
-          - containerPort: 8080
-            protocol: TCP
+        - containerPort: 8080
+          protocol: TCP
       volumes:
- 	  - name: mysql-pvc 
-	    persistentVolumeClaim:
-	      claimName: mysql-pvc
-	    volumeMounts:
-	      -mountPath: /datab
- 	       name: mysql-pvc
+      - name: mysql-pvc 
+        persistentVolumeClaim:
+          claimName: mysql-pvc
