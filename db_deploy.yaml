@@ -32,4 +32,4 @@ spec:
       volumes:
       - name: mysql-pvc 
         persistentVolumeClaim:
-          claimName: mysql-pvc
+          claimName: dpvc-host
