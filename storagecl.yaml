@@ -12,3 +12,6 @@ parameters:
 reclaimPolicy: Delete
 allowVolumeExpansion: true
 volumeBindingMode: WaitForFirstConsumer
+mountOptions:
+- debug
+
