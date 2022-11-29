@@ -19,7 +19,7 @@ spec:
       - name: datab
         image: 105718917616.dkr.ecr.us-east-1.amazonaws.com/datab:v1.0
         volumeMounts:
-        - mountPath: /datab
+        - mountPath: /var/lib/mysql
           name: dpvc-host
         env:
         - name: MYSQL_ROOT_PASSWORD
