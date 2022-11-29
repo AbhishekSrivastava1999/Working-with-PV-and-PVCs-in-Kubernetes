@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dbdeploy
+  namespace: lab3
+  labels:
+    app: mysql
+spec:
+  selector:
+    matchLabels:
+      app: mysql
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: mysql
+    spec:
+      containers:
+      - name: datab
+        image: 105718917616.dkr.ecr.us-east-1.amazonaws.com/datab:v1.0
+        volumeMounts:
+        - mountPath: /var/lib/mysql
+          name: host-mysql-pvc
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value : passw
+        ports: 
+        - containerPort: 3306
+          protocol: TCP
+      volumes:
+      - name: host-mysql-pvc
+        persistentVolumeClaim:
+          claimName: host-mysql-pvc
