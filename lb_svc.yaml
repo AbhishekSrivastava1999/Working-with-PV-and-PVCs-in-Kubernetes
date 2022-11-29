@@ -4,11 +4,13 @@ metadata:
   name: applb
   namespace: lab3
   labels:
-	app: lbsvc	
+    name: lb-svc
+    app: employees
 spec:
   selector:
     app: employees
   ports:
     - protocol: TCP
-      port: 8080
+      port: 80
       targetPort: 8080
+  type: LoadBalancer      
