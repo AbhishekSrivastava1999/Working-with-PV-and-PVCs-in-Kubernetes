@@ -24,12 +24,11 @@ spec:
         env:
         - name: MYSQL_ROOT_PASSWORD
           value : passw
-        - name: DBPORT
-          value : "3306"
         ports: 
-        - containerPort: 8080
+        - containerPort: 3306
           protocol: TCP
       volumes:
       - name: dpvc-host
         persistentVolumeClaim:
           claimName: dpvc-host
+
